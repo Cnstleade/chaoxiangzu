@@ -225,7 +225,7 @@
                 </el-alert>   
                   <el-row class="m20">
                     <el-col :span="3" v-for="(temp, index) in props.row.img" :key="index" :offset="index > 0 ? 1 : 0" style="text-align:center">
-                      <el-card :body-style="{ padding: '0px',background:'rgba(0,0,0,0.4)'}" >
+                      <el-card :body-style="{ padding: '0px',background:'rgba(0,0,0,0.1)'}" >
                         <img :src="temp.src" class="image" width="60" height="60" @click="imgShow(temp.src)" style="cursor:pointer">
                       </el-card>
                     </el-col>
@@ -280,13 +280,20 @@
                           </template>  
                       </el-table-column>
                       <el-table-column prop="wxh" label="微信号" align="center" width="140"></el-table-column>
-                      <el-table-column prop="cjd" label="常居地" align="center" min-width="300">
+                      <el-table-column prop="cjd" label="常居地" align="center" min-width="200">
                         <template slot-scope="scope">
                               <el-tooltip class="item" effect="dark" :content="scope.row.cjd" placement="top">
                                   <span>{{scope.row.cjd}}</span>
                               </el-tooltip>
                         </template>                          
                       </el-table-column>
+                      <el-table-column prop="remarks" label="备注" align="center" min-width="300">
+                        <template slot-scope="scope">
+                              <el-tooltip class="item" effect="dark" :content="scope.row.remarks" placement="top">
+                                  <span>{{scope.row.remarks}}</span>
+                              </el-tooltip>
+                        </template>                          
+                      </el-table-column>                      
                       <!-- <el-table-column prop="result" label="结果" align="center" >
                         <template slot-scope="scope">
                             <el-tag
@@ -362,12 +369,18 @@
                            v-model="fwForm.city"
                         ></el-cascader>
               </el-form-item>
-              <el-form-item label="价格" prop='receiverName'>
-                <el-input v-model="fwForm.jg" ></el-input>
-              </el-form-item>
-              <el-form-item label="面积" prop='receiverName'>
-                <el-input v-model="fwForm.mj" ></el-input>
-              </el-form-item>  
+              <el-row>
+                <el-col :span="7">
+                    <el-form-item label="价格" prop='receiverName'>
+                      <el-input v-model="fwForm.jg" ></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="7" :offset="4">
+                  <el-form-item label="面积" prop='receiverName'>
+                    <el-input v-model="fwForm.mj" ></el-input>
+                  </el-form-item> 
+                </el-col>  
+              </el-row>
               <el-form-item label="朝向" prop='receiverName'>
                   <el-radio-group v-model="fwForm.cx" >
                     <el-radio-button  label="正南" >正南</el-radio-button>
@@ -392,19 +405,27 @@
                    
                       </el-row>
               </el-form-item>
-              <el-form-item label="小区" prop='receiverName'>
-                <el-input v-model="fwForm.xiaoqu" ></el-input>
-              </el-form-item>
-              <el-form-item label="管理员" prop='receiverName'>
-                    <el-select  v-model="fwForm.guanliyuan" placeholder="管理员">
-                      <el-option
-                        v-for="item in guanliyuans"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                      </el-option>
-                    </el-select> 
-              </el-form-item>  
+              <el-row>
+                <el-col :span="7">
+                    <el-form-item label="小区" prop='receiverName'>
+                      <el-input v-model="fwForm.xiaoqu" ></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="7" :offset="4">
+                    <el-form-item label="管理员" prop='receiverName'>
+                          <el-select  v-model="fwForm.guanliyuan" placeholder="管理员">
+                            <el-option
+                              v-for="item in guanliyuans"
+                              :key="item.value"
+                              :label="item.label"
+                              :value="item.value">
+                            </el-option>
+                          </el-select> 
+                    </el-form-item> 
+                </el-col>  
+              </el-row>
+
+ 
               <el-form-item label="地铁" prop='receiverName'>            
                   <el-tag
                     :key="tag"
@@ -542,7 +563,19 @@
                   active-text="有"
                   inactive-text="无">
                 </el-switch>                
-              </el-form-item>                                                                                                                                
+              </el-form-item> 
+              <el-form-item label="照片">
+                    <el-upload
+                     class="upload-demo"
+                     action="https://jsonplaceholder.typicode.com/posts/"
+                     :on-preview="handlePreview"
+                     :on-remove="handleRemove"
+                     :file-list="fileList2"
+                     list-type="picture">
+                     <el-button size="small" type="primary">点击上传</el-button>
+                     <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                    </el-upload>             
+              </el-form-item>                                                                                                                                              
               <!-- <el-form-item label="发送时间" prop="sendTime">
                 <el-time-picker
               
@@ -598,6 +631,78 @@
               <!-- <el-form-item label="" prop="messageContent">
                 <el-input type="textarea" v-model="fwForm.messageContent"></el-input>
               </el-form-item>    -->
+                <el-alert
+                  title="屋主信息"
+                  type="success"
+                  :closable="false"
+                  center
+                  class="m20"
+                  >
+                </el-alert>   
+                  <el-row class="m20" >
+                    <el-col :span="7" >
+                      <el-form-item label="姓名" prop='receiverName'>
+                        <el-input v-model="fwForm.xingm" ></el-input>
+                      </el-form-item>
+                    </el-col>
+                    <el-col :span="7" :offset="4">
+                      <el-form-item label="联系电话" prop='receiverName'>
+                        <el-input v-model="fwForm.lianxidianhua" ></el-input>
+                      </el-form-item>  
+                    </el-col>
+                  </el-row>
+                  <el-row  >
+                    <el-col :span="7">
+                <el-form-item label="身份证号" prop='receiverName'>
+                      <el-input v-model="fwForm.sfz" ></el-input>
+                    </el-form-item>  
+                    </el-col>
+                    <el-col :span="7" :offset="4">
+                    <el-form-item label="微信号" prop='receiverName'>
+                      <el-input v-model="fwForm.wxh" ></el-input>
+                    </el-form-item> 
+                    </el-col>
+                  </el-row>                  
+                  <el-row  >
+                    <el-col :span="7">
+                    <el-form-item label="性别" prop='receiverName'>
+                      <el-select  v-model="fwForm.sex" placeholder="请输入性别">
+                        <el-option
+                          v-for="item in sexs"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select> 
+                    </el-form-item>   
+                    </el-col>
+                    <el-col :span="7" :offset="4">
+                    <el-form-item label="关系" prop='receiverName'>
+                    <el-select  v-model="fwForm.rla" placeholder="请输入关系">
+                      <el-option
+                        v-for="item in rlas"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                      </el-option>
+                    </el-select> 
+                    </el-form-item> 
+                    </el-col>
+                  </el-row>  
+                  
+                      
+ 
+   
+              <el-form-item label="常居地">
+                      <el-row class="flex">
+                          <el-cascader
+                            placeholder="请选择城市"
+                            :options="city"
+                             v-model="fwForm.citys"
+                          ></el-cascader>
+                        <el-input v-model="fwForm.xxdz" class="l20"></el-input>
+                      </el-row>
+              </el-form-item>                                       
              <el-form-item label="备注" prop="remarks">
                 <el-input type="textarea" v-model="fwForm.remarks"></el-input>
               </el-form-item>                         
@@ -627,6 +732,7 @@ import AllCity from "@/assets/js/citys";
 export default {
   data() {
     return {
+      fileList2: [],
       dynamicTags: [],
       gongjiaoTags: [],
       innerImgVisible: false,
@@ -639,6 +745,12 @@ export default {
         { label: "陈宏波", value: 1 },
         { label: "王成成", value: 2 },
         { label: "夏颖", value: 3 }
+      ],
+      sexs: [{ label: "男", value: 1 }, { label: "女", value: 2 }],
+      rlas: [
+        { label: "屋主", value: 1 },
+        { label: "亲属", value: 2 },
+        { label: "朋友", value: 2 }
       ],
       addVisible: false,
       title: "房源详情",
@@ -661,6 +773,11 @@ export default {
           gly: "陈宏波",
           glylx: "15366512811",
           wz: "天津和平区面馆百年面道(和平路店)",
+          img: [
+            { src: require("../../../assets/image/bannner1.jpg") },
+            { src: require("../../../assets/image/bannner2.jpg") },
+            { src: require("../../../assets/image/bannner3.jpg") }
+          ],
           fwxx: [
             {
               dt: "1号线 共康路  1号线 通河新村  1号线 彭浦新村 ",
@@ -685,7 +802,9 @@ export default {
               sfz: "320981199210294290",
               xb: true,
               wxh: "chb921029",
-              cjd: "共康路三泉路，719路,长临路共康路(招呼站)，850路"
+              cjd: "共康路三泉路，719路,长临路共康路(招呼站)，850路",
+              remarks:
+                "屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块屋主要卖3000块"
             }
           ]
         }),
@@ -785,9 +904,32 @@ export default {
       this.addVisible = true;
     },
     //编辑
-    handleEdit(index, row) {},
+    handleEdit(index, row) {
+      this.$message({
+        message: "您无此权限，如需开通权限请联系管理员",
+        type: "error"
+      });
+    },
     //下架
-    handleDelte(index, row) {},
+    handleDelte(index, row) {
+      this.$confirm("此操作将下架该房源, 是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+        .then(() => {
+          this.$message({
+            type: "success",
+            message: "删除成功!"
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消删除"
+          });
+        });
+    },
     handleCurrentChange(val) {
       this.npage = val;
       this.handleSearch();
@@ -848,6 +990,12 @@ export default {
     imgShow(src) {
       this.imgSrc = src;
       this.innerImgVisible = true;
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
     }
   },
   mounted() {
