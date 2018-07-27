@@ -906,12 +906,12 @@ export default {
     //编辑
     handleEdit(index, row) {
       this.$message({
-        message: "您无此权限，如需开通权限请联系管理员",
+        message: "您无此权限，如需开通权限请联系管理员!",
         type: "error"
       });
     },
     //下架
-    handleDelte(index, row) {
+    handleDelete(index, row) {
       this.$confirm("此操作将下架该房源, 是否继续?", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
@@ -919,8 +919,8 @@ export default {
       })
         .then(() => {
           this.$message({
-            type: "success",
-            message: "删除成功!"
+            type: "error",
+            message: "您无此权限，如需开通权限请联系管理员!"
           });
         })
         .catch(() => {
