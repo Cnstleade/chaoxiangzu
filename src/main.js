@@ -7,13 +7,14 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import Element from 'element-ui';
 import '@/assets/css/common.scss'
+import axios from 'axios';
 // import '@/assets/js/rem';
-
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 import VueLazyLoad from 'vue-lazyload'
-Vue.use(VueLazyLoad,{
-    error:'./assets/logo.png',
-    loading:'./assets/logo.png'
+Vue.use(VueLazyLoad, {
+  error: './assets/logo.png',
+  loading: './assets/logo.png'
 })
 Vue.use(Element, {
   size: 'small',
@@ -25,6 +26,8 @@ Vue.use(ElementUI);
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })

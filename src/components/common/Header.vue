@@ -30,16 +30,16 @@
       </div>
       <!-- 用户头像 -->
       <div class="header-user-avator">
-        <img src="static/img/img.jpg" alt="">
+        <img src="@/assets/image/img.jpg" alt="">
       </div>
       <!-- 用户名下拉列表 -->
       <el-dropdown class="user-name" trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
-                    {{username}}<i class="el-icon-caret-bottom"></i>
+                    admin<i class="el-icon-caret-bottom"></i>
                 </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="admin/basicInformation">基本资料</el-dropdown-item>
-          <el-dropdown-item command="editPassword">密码管理</el-dropdown-item>
+          <!-- <el-dropdown-item command="admin/basicInformation">基本资料</el-dropdown-item> -->
+          <el-dropdown-item command="passwordManagement">密码管理</el-dropdown-item>
           <el-dropdown-item command="loginout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -95,16 +95,16 @@ export default {
     // 用户名下拉菜单选择事件
     handleCommand(command) {
       if (command == "loginout") {
-         this.OUT_LOGIN();
-        this.$store
-          .dispatch("Logout")
-          .then(() => {
-            // this.$router.push({ path: "/login" });
-          })
-          .catch(err => {
-            this.$message.error(err);
-          });
-        // this.$router.push("/login");
+        //  this.OUT_LOGIN();
+        // this.$store
+        //   .dispatch("Logout")
+        //   .then(() => {
+        //     // this.$router.push({ path: "/login" });
+        //   })
+        //   .catch(err => {
+        //     this.$message.error(err);
+        //   });
+        this.$router.push("/login");
       } else {
         this.$router.push("/" + command);
       }

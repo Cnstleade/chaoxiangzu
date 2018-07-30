@@ -47,7 +47,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 2000);
+    }, 800);
   }
 };
 </script>

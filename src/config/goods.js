@@ -13,7 +13,8 @@ export default class Good {
     glylx,
     fwxx,
     wzxx,
-    img
+    img,
+    zt1
   }) {
     this.bh = bh
     this.zt = zt
@@ -29,6 +30,7 @@ export default class Good {
     this.fwxx = fwxx
     this.wzxx = wzxx
     this.img = img
+    this.zt1 = zt1
   }
 
 

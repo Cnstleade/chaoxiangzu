@@ -70,7 +70,7 @@
                             >{{scope.row.zt===1?'上架':scope.row.zt===2?'维护中':'下架'}}</el-tag>                
               </template>  
             </el-table-column>     
-            <el-table-column prop="zt1" label="出租状态" align="center" width="100" 
+            <!-- <el-table-column prop="zt1" label="出租状态" align="center" width="100" 
               :filters="[{ value: 1, text: '已租' }, { value: 2, text: '未租' }, { value: 3, text: '下架' }]"
               :filter-method="filterStauts"     
               >         
@@ -79,7 +79,7 @@
                                 :type="scope.row.zt1===1?'':'danger'"
                             >{{scope.row.zt1===1?'已租':'未租'}}</el-tag>                
               </template>  
-            </el-table-column>                          
+            </el-table-column>                           -->
             <el-table-column prop="cs" label="城市" align="center" width="100" >
             </el-table-column>            
             <el-table-column prop="tj" label="添加时间" align="center" width="120" sortable>
@@ -770,7 +770,7 @@ export default {
         { label: "朋友", value: 2 }
       ],
       addVisible: false,
-      title: "房源详情",
+      title: "待租房源",
       search: {
         input: "",
         time: "",

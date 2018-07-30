@@ -100,7 +100,9 @@ export default {
           id: "1",
           children: [
             { icon: "el-icon-goods", url: "goods1", text: "房源详情", id: "11" },
-            { icon: "el-icon-goods", url: "goods2", text: "已租房源", id: "12" }
+            { icon: "el-icon-goods", url: "goods3", text: "已租房源", id: "12" },
+            { icon: "el-icon-goods", url: "goods4", text: "维护中", id: "12" },
+            { icon: "el-icon-goods", url: "goods5", text: "待租房源", id: "12" }
           ]
         },
         {
@@ -109,28 +111,29 @@ export default {
           text: "订单中心",
           id: "2",
           children: [
-            { icon: "el-icon-goods", url: "order1", text: "商品中心1", id: "21" },
-            { icon: "el-icon-goods", url: "order2", text: "商品中心2", id: "22" }
+            { icon: "el-icon-goods", url: "order1", text: "订单中心", id: "21" },
+            { icon: "el-icon-goods", url: "order2", text: "有效订单", id: "22" }
           ]
         },
         {
           icon: "el-icon-goods",
           url: "user",
-          text: "用户中心",
+          text: "售后中心",
           id: "3",
           children: [
-            { icon: "el-icon-goods", url: "user1", text: "商品中心1", id: "31" },
-            { icon: "el-icon-goods", url: "user2", text: "商品中心2", id: "32" }
+            { icon: "el-icon-goods", url: "user1", text: "售后中心", id: "31" },
           ]
         },
         {
-          icon: "el-icon-goods",
+          icon: "el-icon-setting",
           url: "system",
-          text: "系统中心",
+          text: "系统管理",
           id: "4",
           children: [
-            { icon: "el-icon-goods", url: "system1", text: "商品中心1", id: "41" },
-            { icon: "el-icon-goods", url: "system2", text: "商品中心2", id: "42" }
+            { icon: "el-icon-goods", url: "user", text: "用户管理", id: "41" },
+            { icon: "el-icon-goods", url: "logging", text: "日志管理", id: "42" },
+            { icon: "el-icon-goods", url: "role", text: "权限管理", id: "43" },
+            { icon: "el-icon-goods", url: "passwordManagement", text: "密码修改", id: "44" }
           ]
         },                        
 
