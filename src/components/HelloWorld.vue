@@ -1,16 +1,21 @@
 <template>
   <div>
       <router-view></router-view>
+      <c-section></c-section>
   </div>
 </template>
 
 <script>
+import cSection from '@/components/common/section'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components:{
+    cSection
   }
 }
 </script>

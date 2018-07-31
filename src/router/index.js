@@ -7,9 +7,25 @@ Vue.use(Router)
 export default new Router({
   routes: [{
       path: '/',
-      component: resolve => require(['../components/HelloWorld.vue'], resolve)
+      redirect: '/hello'
     },
-    
+    {
+      path: '/hello',
+      component: resolve => require(['../components/HelloWorld.vue'], resolve),
+      children: [
+
+        {
+          path: '/',
+          redirect: '/home'
+        },
+
+
+        {
+          path: '/home',
+          component: resolve => require(['../components/page/home.vue'], resolve)
+        },        
+      ]
+    },
     {
       path: '/home',
       component: resolve => require(['../components/page/home.vue'], resolve)

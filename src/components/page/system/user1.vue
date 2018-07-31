@@ -809,7 +809,7 @@ export default {
           total: 20,
           rows: [
             {
-              reciverName: "杜婷",
+              reciverName: "庄周",
               mobilePhone: "18761864005",
               sendTime: null,
               periodId: null,
