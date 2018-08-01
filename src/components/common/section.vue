@@ -1,7 +1,7 @@
 <template>
-    <div class="width section" >
-        <p style="    font-size: 24px;font-weight: bold;color: #21cfbb;text-align:center">RECOMMENDATION</p>
-        <p style="    font-size: 48px;font-weight: bold;color: #1a323e;padding: 22px 0 0 0;text-align:center">精品房源推荐</p>
+    <div class="width section" @mouseover="autoMove(false)"  @mouseout="autoMove()">
+        <p style="    font-size: 24px;font-weight: bold;color: #21cfbb;text-align:center">{{deTail.un}}</p>
+        <p style="    font-size: 48px;font-weight: bold;color: #1a323e;padding: 22px 0 0 0;text-align:center">{{deTail.zh}}</p>
         <div class="title">
             <template v-for="(ad,i) in title">
                 <span :key="i" @click="changeS(i)" :class="{spanC:spanCurrent == i}">{{ad}}</span>
@@ -11,30 +11,33 @@
         <div class="sectionBox" >
             <div class="sectionA">
                 <ul ref="sections">
+                  
                     <li v-for="(temp,i) in detail" :key="i" :class="{imgbox:true,marginLeft:i!=0}" >
-                        <el-card :body-style="{ padding: '0px' }"  shadow="hover" >
+                
+                        <el-card :body-style="{ padding: '0px' }"  shadow="always" >
                           <img :src="temp.src" class="image" >
                           <div style="padding: 14px;">
                               <p>
-                                  <template v-for="(ad,i) in temp.add">
-                                      <el-tag class="l20" :key="i">{{ad}}</el-tag>
+                                  <template v-for="(ad,iii) in temp.add">
+                                      <el-tag class="l20" :key="iii">{{ad}}</el-tag>
                                   </template>
 
                                   <!-- <el-tag>美兰湖</el-tag>
                                   <el-tag>佳翔苑</el-tag> -->
                               </p>
-                              <p style="color:#E6A23C;font-size:14px;line-height:30px">原价:
+                              <p style="color:#E6A23C;font-size:14px;line-height:30px" class="l20">原价:
 			    									{{temp.yuanjia}}
 			    									元/月
 			    								</p>
                               <p >
-                            <template v-for="(de,i) in temp.detail">
-                                      <el-tag  :key="i">{{de}}</el-tag>
+                            <template v-for="(de,ii) in temp.detail">
+                        
+                                      <el-tag  class="l20" :key="ii">{{de}}</el-tag>
                                   </template>                              
 
                               </p>                                            
                             <div class="flex" style="margin-top:10px">
-                                <p>
+                                <p class="l20">
                                     <template v-for="(a,i) in temp.adds">
                                       <span :key="i">{{a}}</span>
                                       </template> 
@@ -59,90 +62,98 @@
         <div class="dots">
           <span class="dot" :class="{active: currentPageIndex === index }" v-for="(item, index) in dots" :key="index" @click="changeIndex(index ,true)"></span>
         </div>
+        <div class="more">
+          <a href="">更多房源</a>
+        </div>
     </div>
 </template>
 <script>
 export default {
   props: {
     section: {
-      default: [
-        {
-          src: require("@/assets/image/bannner1.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner2.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner3.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner1.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner2.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner3.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner1.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner2.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        },
-        {
-          src: require("@/assets/image/bannner3.jpg"),
-          add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
-          yuanjia: "1391",
-          detail: ["次卧", "飘窗"],
-          adds: ["宝山区", "罗店"],
-          price: "1478"
-        }
-      ]
+      type: Array
+      // default: [
+      //   {
+      //     src: require("@/assets/image/bannner1.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner2.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner3.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner1.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner2.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner3.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner1.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner2.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   },
+      //   {
+      //     src: require("@/assets/image/bannner3.jpg"),
+      //     add: ["地铁7号线租房", "美兰湖", "佳翔苑"],
+      //     yuanjia: "1391",
+      //     detail: ["次卧", "飘窗"],
+      //     adds: ["宝山区", "罗店"],
+      //     price: "1478"
+      //   }
+      // ]
     },
     title: {
-      type: Array,
-      default: ["今日特惠", "最新房源", "热门小区", "人气房源"]
+      type: Array
+      // default: ["今日特惠", "最新房源", "热门小区", "人气房源"]
+    },
+    deTail: {
+      type: Object
+      // default: { zh: "精品房源推荐", un: "RECOMMENDATION" }
     }
   },
   data() {
@@ -176,6 +187,7 @@ export default {
       return aArr;
     },
     _setSectionWidth(arr) {
+      clearTimeout(this.timer);
       let line = arr.length;
 
       let width = 353 * line + (line - 1) * 20;
@@ -185,6 +197,7 @@ export default {
 
       this.$refs.sections.style.width = width + "px";
       this.detail = JSON.parse(JSON.stringify(arr));
+      this.autoMove(true);
     },
     changeIndex(i, type = false) {
       let px;
@@ -208,12 +221,16 @@ export default {
         if (t == -1) t = 0;
         this.currentPageIndex = parseInt(t / 3);
       }
-
       if (
         -(353 * this.section.length + (this.section.length - 2) * 20) < px &&
         px <= 0
       ) {
         this.$refs.sections.style.transform = "translateX(" + px + "px)";
+      } else if (
+        -(353 * this.section.length + this.section.length * 20) == px
+      ) {
+        this.$refs.sections.style.transform = "translateX(0px)";
+        this.currentPageIndex = 0;
       } else {
         return;
       }
@@ -221,20 +238,35 @@ export default {
     changeS(i) {
       this.spanCurrent = i;
       this._setSectionWidth(this.shuffle(this.section));
+    },
+    autoMove(type = true) {
+      clearTimeout(this.timer);
+      if (type) {
+        this.timer = setInterval(() => {
+          this.changeIndex(-1);
+        }, 2000);
+      } else {
+        clearTimeout(this.timer);
+      }
     }
   },
   mounted() {
     setTimeout(() => {
       this._setSectionWidth(this.section);
     }, 20);
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
+  },
+  deactivated() {
+    clearTimeout(this.timer);
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .section {
-  margin-top: 100px;
-  height: 700px;
+  height: 850px;
   position: relative;
   .title {
     text-align: center;
@@ -320,7 +352,7 @@ export default {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 80px;
+    bottom: 230px;
     text-align: center;
     font-size: 0;
 
@@ -337,6 +369,27 @@ export default {
         border-radius: 12px;
         background: rgba(0, 0, 0, 0.8);
       }
+    }
+  }
+  .more {
+    position: absolute;
+
+    right: 0;
+    left: 0;
+    bottom: 80px;
+    text-align: center;
+    a {
+      display: block;
+      margin: 0 auto;
+      height: 80px;
+      width: 245px;
+      background: #20cebb;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 80px;
+      border-radius: 40px;
     }
   }
 }
