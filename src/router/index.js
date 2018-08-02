@@ -14,22 +14,38 @@ export default new Router({
       component: resolve => require(['../components/HelloWorld.vue'], resolve),
       children: [
 
-        {
-          path: '/',
-          redirect: '/home'
-        },
+        // {
+        //   path: '/',
+        //   redirect: '/home'
+        // },
 
 
-        {
-          path: '/home',
-          component: resolve => require(['../components/page/home.vue'], resolve)
-        },        
+        // {
+        //   path: '/home',
+        //   component: resolve => require(['../components/page/home.vue'], resolve)
+        // },        
       ]
     },
     {
       path: '/home',
       component: resolve => require(['../components/page/home.vue'], resolve)
     },
+    {
+      path: '/detail',
+      component: resolve => require(['../components/detail.vue'], resolve)
+    },
+    {
+      path: '/search',
+      component: resolve => require(['../components/search.vue'], resolve)
+    },
+    {
+      path: '/register',
+      component: resolve => require(['../components/register.vue'], resolve)
+    },   
+    {
+      path: '/userLogin',
+      component: resolve => require(['../components/login.vue'], resolve)
+    },        
     {
       path: '/login',
       component: resolve => require(['../components/page/Login.vue'], resolve)

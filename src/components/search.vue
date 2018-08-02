@@ -36,94 +36,302 @@
                 </div>
             </div>
         </header>
+        <section class="section1">
+            <div class="width">
+                <div class="easyCurve" style="overflow:hidden">
+		            <span>您当前的位置：</span>
+		                        <div id="topnanv">
+		                        	<div id="anvlfteb">
+		                        		<div class="posbox">
+		                        				<a title="南京租房" href="javacript:void(0)">南京租房</a> 
+		                        		</div>
+		                        		<em>&gt;</em>
+		                        		<div class="posbox">
+		                        				<a title="轻松找房" href="javacript:void(0)">轻松找房</a>
 
+		                        		</div>
+		                        		<em>&gt;</em>
+		                        		<div class="posbox">
+		                        				<a title="江宁区租房" href="javacript:void(0)">江宁区租房</a>
 
-       <div class="block" style="">
-         <el-carousel trigger="click" height="450px" style="zIndex:100" >
-           <el-carousel-item v-for="(item,i) in imgSrc" :key="i">
-             <img :src="item.src" alt="" class="img" >
-           </el-carousel-item>
-         </el-carousel>
-          <div class="baBotShadow">
-          			<div class="babot1170">
-          				<dl class="babotForm">
-          					<div class="clearfix">
-          						<dt>
-          							<span class="babotInp fL"> <input class="babotText fl" type="text" placeholder="输入区域、地铁、小区名" onfocus="addLayer(this);" name="" id="houseRoad" onkeydown="keyUpSearch('index')">
-          							</span>
-          							<form action="javacript:void(0)" method="post" id="searchIndexForm" name="searchIndexForm">
-          								<input type="hidden" name="queryDto.romAds" id="romAds" value=""> <input type="hidden" name="queryDto.roomCode" id="roomCode" value="">
-          							</form>
-          						</dt>
-          						<dd>
-          							<input type="hidden" id="houseRoad_b" value=""> <input type="hidden" id="stamp" value="spread"> <input type="button" @click="go" value="搜索" onclick="searchByKeyWord('house');" class="HomeSo fL"> <a href="javacript:void(0)" class="homeMap fL" title="上海租房"><span  @click="go">地图找房</span></a>
-          									<a href="javacript:void(0)" class="homeBus fL" title="上海租房"  @click="go"><span>公交站点找房</span></a>
+		                        		</div>
+		                        		<em>&gt;</em>
+		                        		<div class="posbox">
+		                        				<a title="百家湖租房" href="javacript:void(0)">百家湖租房</a>
 
-          									<form action="javacript:void(0)" method="post" id="searchMayForm2" name="searchMayForm2">
-          										<input type="hidden" name="address" id="address" value=""> <input type="hidden" name="linkaddress" id="linkaddress" value="">
-          									</form>
-          						</dd>
-          					</div>
-          					<div class="babotArea" id="index_hot_xq">
-          						<em> <i>热门板块：</i> <a href="javacript:void(0)"  title="嘉定城区租房">嘉定城区</a>
-          							<a href="javacript:void(0)"  title="宝山顾村租房">宝山顾村</a>
-          							<a href="javacript:void(0)"  title="松江老城租房">松江老城</a>
-          							<a href="javacript:void(0)"  title="浦东唐镇租房">浦东唐镇</a>
-          							<a href="javacript:void(0)"  title="闵行浦江镇租房">闵行浦江镇</a>
-          							<a class="more-icon" href="javacript:void(0)"  title="上海租房"></a>
-          						</em> <em> <i>热门小区：</i> <a href="javacript:void(0)"  title="好日子大家园租房">好日子大家园</a>
-          							<a href="javacript:void(0)" target="_blank" title="浦恒馨苑租房">浦恒馨苑</a>
-          							<a href="javacript:void(0)" target="_blank" title="培元新苑租房">培元新苑</a>
-          							<a href="javacript:void(0)" target="_blank" title="海曲雅苑租房">海曲雅苑</a>
-          							<a href="javacript:void(0)" target="_blank" title="谷水佳苑租房">谷水佳苑</a>
-          							<a class="more-icon" href="javacript:void(0)" title="上海租房" target="_blank"></a>
-          						</em>
-          					</div>
-          				</dl>
-          			</div>
-          		</div>         
-       </div>  
-       <div style="position:relative" class="width">
-         <div class=" move-title">
-            欢迎来到超享租,您是第 <span class="moveSpan">228,886</span> 位超享租服务的客户!
-         </div>
-         <div class="move">
-        <c-section  :section="section1" :title="title1" :deTail="deTail1"></c-section>
-         </div>
-         <div class="move">
-        <c-section  :section="section1" :title="title2" :deTail="deTail2"></c-section>         
-         </div>
-         <div class="move">
-        <c-section  :section="section1" :title="title2" :deTail="deTail2"></c-section>         
-         </div>
-         <div class="move">
-        <c-section  :section="section1" :title="title2" :deTail="deTail2"></c-section>         
-         </div>
-         <div class="move width">
-            <div class="person ">
-            			<div class="personCont">
-            				<div class="introduce">
-            					<h5>LAURA</h5>
+								        </div>
+			                    </div>
+			            <div id="seledbox" class="posiabox" style="display: none; left: -1px;">
+                         </div>
+                </div>
+		        <div class="clear"></div>
+	                </div> 
+                </div>
+            <div  class="easySoBox clearfix width">
+                <div class="easySo"  style="overflow:hidden">
+					<span class="easySoTit fL">房间价格：</span> <span class="easySoCon priceCon fL"> <a title="南京租房" href="javascript:price('');"><em class="cur">不限</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('500元以下','76');"><em>500元以下</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('500-700元','27');"><em>500-700元</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('700-1000元','28');"><em>700-1000元</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('1000-1500元','29');"><em>1000-1500元</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('1500-2000元','30');"><em>1500-2000元</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('2000-3000元','73');"><em>2000-3000元</em></a>
+						<a title="南京租房" href="javacript:void(0)" style="color: #666;" onclick="price('3000元以上','31');"><em>3000元以上</em></a>
+						</span> <span class="priceAuto fR">
+                            <em>自定义：</em>
+                         <input name="priceL" maxlength="6" class="priceInput" type="text" id="priceL" value="">
+						<em>到</em> 
+                        <input name="priceH" maxlength="6" class="priceInput" type="text" id="priceH" value="">
+						<input type="button" @click="go" value="确  定" id="bt_sub" class="priceSub"></span>
+				</div>
+                 <div class="easySo" id="easySo"  style="overflow:hidden">
+					<span class="easySoTit fL">行政区域：</span> <span class="easySoCon areaCon fL"> <a title="南京租房" href="javascript:condition('prcId','');"> <em style="color:#666;">不限</em>
+					</a> <a title="市辖区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','126');"> <em>
+									市辖区</em>
+							</a>
+						<a title="玄武区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','127');"> <em>
+									玄武区</em>
+							</a>
+						<a title="白下区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','128');"> <em>
+									白下区</em>
+							</a>
+						<a title="秦淮区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','129');"> <em>
+									秦淮区</em>
+							</a>
+						<a title="建邺区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','130');"> <em>
+									建邺区</em>
+							</a>
+						<a title="鼓楼区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','131');"> <em>
+									鼓楼区</em>
+							</a>
+						<a title="下关区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','132');"> <em>
+									下关区</em>
+							</a>
+						<a title="浦口区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','133');"> <em>
+									浦口区</em>
+							</a>
+						<a title="栖霞区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','134');"> <em>
+									栖霞区</em>
+							</a>
+						<a title="雨花台区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','135');"> <em>
+									雨花台区</em>
+							</a>
+						<a title="江宁区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" class="find_select" onclick="condition('prcId','136');"> <em class="cur">
+									江宁区</em>
+							</a>
+						<a title="六合区租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','137');"> <em>
+									六合区</em>
+							</a>
+						<a title="溧水县租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','138');"> <em>
+									溧水县</em>
+							</a>
+						<a title="高淳县租房" href="javacript:void(0)" style="color: #666;" id="xzqy" onclick="condition('prcId','139');"> <em>
+									高淳县</em>
+							</a>
+						
+					</span>
+				</div>   
+                <div class="areaSideCon clearfix" id="areaLay"  style="overflow:hidden">
+						<div class="areaLay">
+							<a title="南京租房" href="javascript:condition('cellArea','');"> <em style="color:#666;">全部</em>
+							</a>
+							<i>B</i>
+								<a title="滨江开发区租房" href="javacript:void(0)" onclick="condition('cellArea','1973');"> <em>
+											滨江开发区</em>
+									</a>
+								<a title="百家湖租房" href="javacript:void(0)" onclick="condition('cellArea','1977');"> <em class="active">
+											百家湖</em>
+									</a>
+								<i>C</i>
+								<a title="岔路口租房" href="javacript:void(0)" onclick="condition('cellArea','1980');"> <em>
+											岔路口</em>
+									</a>
+								<a title="淳化租房" href="javacript:void(0)" onclick="condition('cellArea','1987');"> <em>
+											淳化</em>
+									</a>
+								<i>D</i>
+								<a title="东山租房" href="javacript:void(0)" onclick="condition('cellArea','1994');"> <em>
+											东山</em>
+									</a>
+								<i>F</i>
+								<a title="方山租房" href="javacript:void(0)" onclick="condition('cellArea','1984');"> <em>
+											方山</em>
+									</a>
+								<i>J</i>
+								<a title="江宁周边租房" href="javacript:void(0)" onclick="condition('cellArea','1975');"> <em>
+											江宁周边</em>
+									</a>
+								<a title="将军大道租房" href="javacript:void(0)" onclick="condition('cellArea','1988');"> <em>
+											将军大道</em>
+									</a>
+								<a title="金箔路租房" href="javacript:void(0)" onclick="condition('cellArea','1998');"> <em>
+											金箔路</em>
+									</a>
+								<i>K</i>
+								<a title="科学园租房" href="javacript:void(0)" onclick="condition('cellArea','1989');"> <em>
+											科学园</em>
+									</a>
+								<i>S</i>
+								<a title="上坊租房" href="javacript:void(0)" onclick="condition('cellArea','1990');"> <em>
+											上坊</em>
+									</a>
+								<a title="双龙大道租房" href="javacript:void(0)" onclick="condition('cellArea','1999');"> <em>
+											双龙大道</em>
+									</a>
+								<i>Z</i>
+								<a title="竹山路租房" href="javacript:void(0)" onclick="condition('cellArea','2000');"> <em>
+											竹山路</em>
+									</a>
+						</div>
+				</div> 
+                <div class="easySo"  style="overflow:hidden">
+					<span class="easySoTit fL">地铁沿线：
+                        </span> <span class="easySoCon metroSoList fL"> <a title="南京租房" href="javascript:condition('subway','');"> <i class="cur">不限</i>
+					    </a> <a title="1号线租房" href="http://nj.qk365.com/list/a136-s22-k1977" style="color: #666;" onclick="condition('subway','22');"> <em>
+									1号线</em>
+							</a>
+						<a title="2号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','23');"> <em>
+									2号线</em>
+							</a>
+						<a title="3号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','24');"> <em>
+									3号线</em>
+							</a>
+						<a title="4号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','25');"> <em>
+									4号线</em>
+							</a>
+						<a title="10号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','26');"> <em>
+									10号线</em>
+							</a>
+						<a title="S1号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','27');"> <em>
+									S1号线</em>
+							</a>
+						<a title="S8号线租房" href="javascript:void(0)" style="color: #666;" onclick="condition('subway','28');"> <em>
+									S8号线</em>
+							</a>
+					</span>
+				</div>     
+                <div class="easySo"  style="overflow:hidden">
+					<span class="easySoTit fL">房间户型：</span> <span class="easySoCon roomDoor fL"> <a title="南京租房" href="javascript:condition('romType','');"> <em class="cur">不限</em>
+					</a> <a title="南京租房" href="javascript:void(0)" style="color: #666;" onclick="condition('romType','1');"> <em>
+									独卫</em>
+							</a>
+						<a title="南京租房" href="javascript:void(0)" style="color: #666;" onclick="condition('romType','2');"> <em>
+									单间</em>
+							</a>
+						<a title="南京租房" href="javascript:void(0)" style="color: #666;" onclick="condition('romType','3');"> <em>
+									整租</em>
+							</a>
+						</span>
+				</div>
+                <div class="easySo easySoNo"  style="overflow:hidden">
+					<span class="easySoTit fL">可租日期：</span> <span class="easySoCon roomDoor fL"> <a title="南京租房" href="javascript:queryRent('');"> <em class="cur">不限</em>
+					</a> <a title="南京租房" style="color: #666;" href="javascript:queryRent('anyTimeRent');"> <em>立即可租</em>
+					</a> <a title="南京租房" style="color: #666;" href="javascript:queryRent('oneWeekRent');"> <em>一周内可租</em>
+					</a> <a title="南京租房" style="color: #666;" href="javascript:queryRent('twoWeekRent');"> <em>两周内可租</em>
+					</a> <a title="南京租房" style="color: #666;" href="javascript:queryRent('oneMonthRent');"> <em>一月内可租</em>
+					</a><a title="南京租房" style="color: #666;" href="javascript:queryRent('sixtyDayRent');"> <em>两月内可租</em>
+					</a>
+					</span>
+				</div>  
+                <div class="easySo"  style="overflow:hidden">
+						<span class="easySoTit fL">当前条件：</span>
+						<span class="fL foctar">
+								<ul>
+									<li class="liPad">区域：</li>
+									<li>江宁区</li>
+									<li class="liImg" onclick="condition('prcId','');"></li>
+								</ul>
+							</span>
+						<span class="fL foctar">
+								<ul>
+									<li class="liPad">商圈：</li>
+									<li>百家湖</li>
+									<li class="liImg" onclick="condition('cellArea','');"></li>
+								</ul>
+							</span>
+				</div>   
+                                                                                                 
+            </div>
+            <div class="easySort clearfix width"  style="overflow:hidden">
+			    	<div class="easySo">
+			    		<a title="南京租房" onclick="javascript:void(0);"> <span class="easySoTit fL"> 默认排序： </span>
+			    		</a> <span class="easySoCon roomDoor fL"> <a title="南京租房" style="color: #666;" href="javascript:sort('showPrice');">
+			    				<em>价格</em>
+			    		</a> <a title="南京租房" style="color: #666;" href="javascript:sort('romArea');"> <em>面积</em>
+			    		</a> <a title="南京租房" style="color: #666;" href="javascript:sort('cucSubwayDistance');"> <em>距地铁</em>
+			    		</a> <a title="南京租房" style="color: #666;" href="javascript:sort('romView');"> <em>浏览次数</em>
+			    		</a>
+			    				<a title="南京租房" style="color: #666;" href="javascript:sort('cucVideoUrl');">
+			    					<em id="new">视频看房
+			    						</em>
+			    				</a>
+			    		</span>
+			    		<div class="SortSel fR">
+			    			<em>总共112间房间</em> <span class="sortInpLay">
+			    				<input type="text" class="sortinText" id="houseRoad" onkeydown="keyUpSearch('qszf')" onfocus="addLayer(this);" value="输入区域、地铁、小区名" onblur="if (this.value ==''){this.value='输入区域、地铁、小区名';$('.delete').hide();}">
+			    			<input type="hidden" id="houseRoad_b" value="">
+			    			<input type="hidden" id="stamp" value="spread">
+			    			<em class="delete"></em>
+			    			<input type="button" onclick="keySearch('qszf');" value="" class="sortSub">
+			    			<ul class="jeasySearch blsearch hide" id="resultList">
+			    			</ul>
+			    			<ul class="easySearch blsearch hide" id="hotSearchList">
+			    			</ul>
+			    			</span>
+			    		</div>
+			    	</div>
+                <div href="javascript:void(0)" class="width">
+					<div class="xqjg_pic">
+						<img src="@/assets/image/bannner4.jpg">
+					</div>
+				</div>   
+                <div style="height:400px;position:relative;left:-25px;margin:20px 0">
+                     <c-slider  :section="section1" :title="title2" :deTail="deTail2"></c-slider>         
+                </div>     
+			</div>   
+                       
+        </section>
+        <section class="width">
+            <el-row>
+                <el-col style="position:relative" :span="6" v-for="(temp,i) in section1" :key="i" :offset="i%3 !=0  ?3:0" class="m20" >
+              
+                        <el-card :body-style="{ padding: '0px' }"  shadow="always" >
+                          <img :src="temp.src" class="image" >
+                            <div class="coverBox">
+					            <p class="easySub  clearfix">【江宁区】1、3号线南京南站 龙西新寓 精装白领公寓朝南主卧出租 配备齐全 拎包即住</p>
+					        </div>
+                            <em class="fr0923">
+						        <b>原价:1750</b> 元/月
+					        </em>
+                            <div class="easyEq fl" style="position:relative;margin:20px 0">
+							        <p>
+							        	<a title="龙西新寓租房" class="placeText fl" href="javascript:(0)">
+							        		江宁区-百家湖-龙西新寓租房 19/31层</a>
+							        </p>
+                              <p >
+                                  <template v-for="(ad,iii) in temp.add.slice(0,2)">
+                                      <el-tag class="l20" type="danger" :key="iii">{{ad}}</el-tag>
+                                  </template>
 
-            					<h3>青年客│甘肃到上海，摩羯座少女的青春理想！</h3>
-            					<p>我很慢热，可我内心有光。我想通过自己的努力，走出属于我的一条路来。</p>
-
-            					<div class="button">
-            						<div class="btnLf">
-            							<a href="javacript:void(0)" target="_blank" class="see" title="上海租房" style="background-color: rgb(33, 207, 187); color: white; border: 1px solid rgb(33, 207, 187);">查看详情</a>
-            						</div>
-            						<div class="btnRig btnLf">
-            							<a href="javacript:void(0)" target="_blank" class="check" title="上海租房">更多明星租客</a>
-            						</div>
-            					</div>
-            				</div>
-            			</div>
-            		</div>        
-         </div> 
-         <div class="move">
-          <c-news  :section="section1" :title="title3" :deTail="deTail3"></c-news>         
-         </div>                                   
-      </div>   
+                                  <!-- <el-tag>美兰湖</el-tag>
+                                  <el-tag>佳翔苑</el-tag> -->
+                              </p>
+                             <div class="easyPrivilege" title="首签指定房源，享受特价优惠">
+									<em>特价：</em> <span><i>1071</i>元/月</span>
+								</div>                              
+							</div>
+                            <div class="easyBottomInfo">
+						<!-- 地铁 -->
+						            <a title="南京租房" class="metroText fl">
+						            <span>距离南京南站约929米；</span>
+		                         
+						            </a>
+					            </div>                            
+                        </el-card>
+                </el-col>
+            </el-row>
+        </section>
+    
     <div class="flowLay">
     		<div class="flowList">
     			<span class="flowIcon01"><em>挑选房屋</em></span>
@@ -453,7 +661,7 @@
 
 <script>
 import { addClass } from "@/assets/js/dom";
-import cSection from "@/components/common/section";
+import cSlider from "@/components/common/slider1";
 import cNews from "@/components/common/news";
 export default {
   name: "HelloWorld",
@@ -560,8 +768,8 @@ export default {
   },
 
   methods: {
-    go(){
-      this.$router.push('/search')
+    go() {
+      this.$router.push("/search");
     },
     handleScroll() {
       var scrollTop =
@@ -599,8 +807,8 @@ export default {
     }
   },
   components: {
-    cSection,
-    cNews
+    cNews,
+    cSlider
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -862,13 +1070,11 @@ a {
   padding-top: 10px;
 }
 header {
-  position: fixed;
   height: 60px;
   width: 100%;
   background: #fff;
-  z-index: 9999;
+  z-index: 99;
   box-shadow: 0 1px 3px #959595;
-
 }
 header .imgs {
   position: absolute;
@@ -899,176 +1105,341 @@ header span {
   position: relative;
   top: 60px;
 }
-.baBotShadow {
-  position: absolute;
-  bottom: 14px;
-  left: 0;
-  height: 114px;
+.section1 {
   width: 100%;
-  z-index: 200;
+  background: url(../assets/image/bannner1.jpg);
+  background-size: 100% 100%;
 }
-.babot1170 {
-  width: 1140px;
-  margin: 0 auto;
-  background: url(../assets/image/babotForm-bg.png) no-repeat center;
+.easyCurve {
+  line-height: 52px;
+  font-size: 12px;
+  color: #1a323e;
+  border-bottom: 2px solid #20cebb;
 }
-.babotForm {
-  width: 1140px;
-  height: 103px;
-  padding: 18px 0 0 0;
-  position: relative;
-}
-.clearfix {
-  zoom: 1;
-}
-
-.clearfix {
-}
-.babotForm dt,
-.babotForm dd {
-  float: left;
+.easyCurve span {
   display: block;
-  height: 54px;
-  position: relative;
-  /* width: 569px; */
+  float: left;
+  color: #1a323e;
 }
-.babotInp {
-  display: inline;
-  width: 500px;
-  height: 54px;
-  border-right: 1px solid #d2d2d2;
-
-  margin-left: 26px;
-  position: relative;
-  padding-left\0: 41px;
-  padding-left: 67px;
+.easyCurve em {
+  display: block;
+  float: left;
+  padding: 0 12px 0 6px;
+  line-height: 50px;
 }
-.babotInp input {
-  border: 0;
-  background: none;
-  height: 54px;
-  line-height: 54px;
-  width: 480px;
-  font-size: 14px;
-  padding: 0 10px;
-  padding-left: 42px;
-  background: #fff;
-  border-radius: 7px 0 0 7px;
-  background: url(../assets/image/sss.png) no-repeat 15px 17px #fff;
+#topnanv {
+  font-size: 12px;
+  float: left;
+  /* width: 80%; */
+  position: relative;
+}
+#anvlfteb {
+  position: relative;
+  padding: 0 1px;
+}
+.posbox {
+  position: relative;
+  float: left;
+}
+.posbox a {
+  display: block;
+  padding-right: 10px;
+  color: #1a323e;
+}
+.posbox i {
+  width: 7px;
+  height: 4px;
+  background: url(../assets/image/up.png) 0 -70px no-repeat;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  overflow: hidden;
+}
+.easySoBox {
+  padding: 24px;
+  border: 1px solid #e9e9e8;
+  background: rgba(255, 255, 255, 0.75);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.easySo {
+  font-size: 12px;
+  color: #1a323e;
+  line-height: 30px;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.easySoTit {
+  font-weight: bold;
+  color: #20cebb;
+  font-size: 12px;
 }
 .fL {
   float: left;
 }
-.jsearch {
-  font-size: 14px;
-  line-height: 24px;
-  padding-top: 4px;
-  padding-bottom: 9px;
-  padding-left: 19px;
-  width: 480px;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
-  position: absolute;
-  top: 54px;
-  left: 93px;
-  background: #fff;
-  z-index: 9999;
+.easySoCon {
+  line-height: 30px;
+  padding-left: 14px;
 }
-.hotSearch {
-  font-size: 14px;
-  line-height: 24px;
-  padding-top: 4px;
-  padding-bottom: 9px;
-  padding-left: 19px;
-  width: 480px;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
-  position: absolute;
-  top: 54px;
-  left: 93px;
-  background: #fff;
-  z-index: 9999;
-}
-.HomeSo {
-  font-size: 18px;
-  color: #fff;
-  font-family: "Microsoft Yahei";
-  width: 129px;
-  height: 54px;
-  border: 0;
-  cursor: pointer;
-  text-align: center;
-  background: url(../assets/image/selBox_01.png) no-repeat center;
-}
-.homeMap {
-  width: 126px;
-  height: 52px;
-  border: 0;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  margin: 0 8px 0 28px;
-}
-.homeMap span {
-  font-size: 18px;
-  color: #fff;
-  font-family: "Microsoft Yahei";
-  display: block;
-  line-height: 54px;
-  padding-left: 18px;
-  text-align: center;
-  background: url(../assets/image/icon_01.png) 18px no-repeat;
-}
-.homeBus {
-  width: 158px;
-  height: 52px;
-  border: 0;
-  border: 1px solid #fff;
-  border-radius: 8px;
-}
-.homeBus span {
-  font-size: 16px;
-  color: #fff;
-  font-family: "Microsoft Yahei";
-  display: block;
-  line-height: 54px;
-  padding-left: 18px;
-  text-align: center;
-  background: url(../assets/image/icon_02.png) 15px no-repeat;
-}
-.babotArea {
-  width: 998px;
-  overflow: hidden;
-  z-index: 100;
-  position: absolute;
-  left: 93px;
-  bottom: 10px;
-}
-.babotArea em {
-  display: block;
-  font-size: 12px;
-  color: #fff;
-  margin: 15px 25px 0 0;
+.fL {
   float: left;
 }
-.babotArea em i {
-  color: #fff;
-  margin-right: 5px;
+.easySoCon em.cur,
+.areaCon i.cur,
+.metroSoList i.cur,
+.lf-area-tit i span.cur {
+  color: #20cebb;
 }
-.babotArea em a {
-  color: #fff;
-  font-size: 12px;
-  line-height: 13px;
-  margin-right: 10px;
-}
-.babotArea em .more-icon {
-  width: 44px;
-  height: 13px;
+.easySoCon em,
+.areaCon i,
+.metroSoList em,
+.metroSoList i {
   display: inline-block;
-  background: url(../assets/image/more-icon.png) no-repeat center;
-  margin-right: 0;
-  vertical-align: bottom;
+  margin-right: 24px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.fR {
+  float: right;
+}
+.priceAuto em {
+  padding: 0 8px;
+  line-height: 30px;
+}
+/* .priceAuto input {
+    float: left;
+} */
+.priceInput {
+  font-family: "Microsoft Yahei";
+  line-height: 28px;
+  height: 28px;
+  border: 1px solid #bfbfbf;
+  width: 65px;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  background: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.priceSub {
+  font-family: "Microsoft Yahei";
+  width: 65px;
+  height: 30px;
+  margin: 0 0 0 12px;
+  padding: 0;
+  background: #20cebb;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.priceAuto em {
+  padding: 0 8px;
+  line-height: 30px;
+}
+.areaSideCon,
+.metroSideCon {
+  border: 1px solid #e8e8e8;
+  padding: 10px 17px;
+  float: left;
+  width: 1086px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.areaSideCon em {
+  font-size: 12px;
+  color: #000;
+  padding-right: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.areaSideCon i,
+.metroSideCon i {
+  font-size: 12px;
+  color: #f18d00;
+  padding: 0 4px 0 20px;
+  font-style: normal;
+}
+.easySo .fL.foctar ul .liPad {
+  padding: 0 0 0 10px;
+  color: #666666;
+}
+.easySo .fL.foctar ul li {
+  float: left;
+  line-height: 25px;
+  color: #f18d00;
+  padding: 0 4px;
+}
+.easySo .fL.foctar {
+  border: 1px solid #dddddd;
+  overflow: hidden;
+  height: 25px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.easySo .fL.foctar:hover ul .liImg {
+  background: url(../assets/image/close-hover.png) #f18d00 no-repeat center;
+  height: 25px;
+  width: 20px;
+}
+.easySort {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e8e9e8;
+  border-bottom: none;
+  border-top: 2px solid #20cebb;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.SortSel em {
+  color: #9d9d9d;
+  padding-right: 10px;
 }
 
+.SortSel em,
+.SortSel input {
+  float: left;
+}
+i,
+em {
+  font-style: normal;
+}
+.sortInpLay {
+  float: left;
+  width: 180px;
+  height: 20px;
+  padding: 5px 0 5px 9px;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.SortSel em,
+.SortSel input {
+  float: left;
+}
+.sortinText {
+  width: 151px;
+  height: 20px;
+  border: 0;
+  font-family: "Microsoft Yahei";
+  padding: 0;
+  margin: 0;
+  color: #1a323e !important;
+  background: none;
+  padding-right: 5px;
+}
+.sortSub {
+  width: 24px;
+  height: 20px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: url(../assets/image/icon_03.png) no-repeat 0 center;
+  cursor: pointer;
+}
+.xqjg_pic img {
+  width: 100%;
+}
+.image {
+  width: 100%;
+  height: 260px;
+  display: block;
+}
+.coverBox {
+  position: absolute;
+  top: 216px;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: url(../assets/image//transparentBlack.png) repeat 0 0;
+  line-height: 44px;
+  color: #fff;
+}
+.easySub {
+  font-size: 12px;
+  padding: 7px 12px 0;
+  color: #fff;
+  line-height: 18px;
+  height: 36px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.fr0923 {
+  position: absolute;
+  top: 241px;
+  right: 12px;
+  width: 120px;
+  height: 18px;
+  line-height: 18px;
+  color: #fff;
+  text-align: right;
+  font-size: 12px;
+}
+.placeText {
+  font-size: 12px;
+  padding-left: 30px;
+  background: url(../assets/image/icon_04.png) no-repeat 12px 0px;
+  color: #797979;
+  width: 180px;
+  display: inline-block;
+  line-height: 16px;
+  margin-bottom: 3px;
+  height: 32px;
+}
+.easyPrivilege {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  border: 1px solid #fe7058;
+  border-radius: 5px;
+  width: 98px;
+  height: 52px;
+}
+.easyPrivilege em {
+  font-size: 12px;
+  color: #fff;
+  height: 25px;
+  line-height: 25px;
+  background: #fe7058;
+}
+.easyPrivilege em,
+.easyPrivilege span {
+  display: block;
+  text-align: center;
+}
+.easyPrivilege span {
+  display: block;
+  text-align: center;
+}
+.easyPrivilege span {
+  line-height: 26px;
+  color: #ff6000;
+  font-size: 12px;
+}
+.easyPrivilege span i {
+  font-size: 20px;
+  font-weight: bold;
+}
+.easyBottomInfo {
+  height: 36px;
+  line-height: 35px;
+  background: #f7f7f7;
+  font-size: 12px;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+}
+.easyBottomInfo a {
+  color: #797979;
+}
+.metroText {
+  padding: 0 0 0 20px;
+  background: url(../assets/image/icon_05.png) no-repeat 0 center;
+  color: #797979;
+  margin-left: 10px;
+}
 </style>
 <style>
 .el-carousel__item h3 {

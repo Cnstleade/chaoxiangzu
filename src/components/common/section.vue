@@ -1,12 +1,11 @@
 <template>
-    <div class="width section" @mouseover="autoMove(false)"  @mouseout="autoMove()">
+    <div class=" section" @mouseover="autoMove(false)"  @mouseout="autoMove()">
         <p style="    font-size: 24px;font-weight: bold;color: #21cfbb;text-align:center">{{deTail.un}}</p>
         <p style="    font-size: 48px;font-weight: bold;color: #1a323e;padding: 22px 0 0 0;text-align:center">{{deTail.zh}}</p>
-        <div class="title">
+        <div class="title" >
             <template v-for="(ad,i) in title">
                 <span :key="i" @click="changeS(i)" :class="{spanC:spanCurrent == i}">{{ad}}</span>
             </template>
-  
         </div>
         <div class="sectionBox" >
             <div class="sectionA">
@@ -63,7 +62,9 @@
           <span class="dot" :class="{active: currentPageIndex === index }" v-for="(item, index) in dots" :key="index" @click="changeIndex(index ,true)"></span>
         </div>
         <div class="more">
-          <a href="">更多房源</a>
+          <a href="javacript:void(0)" >
+            <router-link to="/search">更多房源</router-link>
+            </a>
         </div>
     </div>
 </template>
@@ -170,6 +171,9 @@ export default {
     }
   },
   methods: {
+    go(){
+      this.$router.go('/search');
+    },
     shuffle(aArr) {
       // 打散数组函数
       var iLength = aArr.length,

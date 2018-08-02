@@ -1,39 +1,21 @@
 <template>
-    <div class="width section" >
-        <p style="    font-size: 24px;font-weight: bold;color: #21cfbb;text-align:center;margin-top:100px">{{deTail.un}}</p>
-        <p style="    font-size: 48px;font-weight: bold;color: #1a323e;padding: 22px 0 0 0;text-align:center">{{deTail.zh}}</p>        
-        <div class="title flex" >
-            <template v-for="(ad,i) in title">
-                <span :key="i" @click="changeS(i)" :class="{spanB:true,spanC:spanCurrent == i,}" >{{ad}}</span>
-            </template>
-        </div>
+    <div class="width section" @mouseover="autoMove(false)"  @mouseout="autoMove()">
         <div class="sectionBox" >
             <div class="sectionA">
                 <ul ref="sections">
                   
                     <li v-for="(temp,i) in detail" :key="i" :class="{imgbox:true,marginLeft:i!=0}" >
                 
-                        <!-- <el-card :body-style="{ padding: '0px' }"  shadow="always" > -->
-                                    <a class="find findTop" href="javacript:void(0)" target="_blank" title="上海租房">
-									<div class="findTit">
-										<div class="imgLf">
-											<em>31</em> <i>Tue Jul</i>
-										</div>
-										<div class="titRig">
-											<h2>恭喜你！在租房前看到</h2>
-
-											<h2>了这篇最靠谱的小区...</h2>
-										</div>
-									</div>
-									<p>浦东新区2018全新电梯房 打破底价快来了解一下</p>
-									</a>                            
-                          <!-- <img :src="temp.src" class="image" >
+                        <el-card :body-style="{ padding: '0px' }"  shadow="always" >
+                          <img :src="temp.src" class="image" >
                           <div style="padding: 14px;">
                               <p>
                                   <template v-for="(ad,iii) in temp.add">
                                       <el-tag class="l20" :key="iii">{{ad}}</el-tag>
                                   </template>
 
+                                  <!-- <el-tag>美兰湖</el-tag>
+                                  <el-tag>佳翔苑</el-tag> -->
                               </p>
                               <p style="color:#E6A23C;font-size:14px;line-height:30px" class="l20">原价:
 			    									{{temp.yuanjia}}
@@ -61,14 +43,13 @@
                                     <span>元/月起</span>
                                 </p>
                             </div>
-                          </div> -->
-                        <!-- </el-card> -->
+                          </div>
+                        </el-card>
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="more">
-          <a href="javacript:void(0)">查看更多</a>
+            <p class="prev" @click="changeIndex(-1)"></p>
+            <p class="next" @click="changeIndex(1)"></p>
         </div>
     </div>
 </template>
@@ -202,7 +183,7 @@ export default {
 
       this.$refs.sections.style.width = width + "px";
       this.detail = JSON.parse(JSON.stringify(arr));
-      //   this.autoMove(true);
+      this.autoMove(true);
     },
     changeIndex(i, type = false) {
       let px;
@@ -271,81 +252,32 @@ export default {
 
 <style lang="scss" scoped>
 .section {
-  height: 550px;
   position: relative;
+  overflow: hidden;
+  height: 400px;
   .title {
-    overflow: hidden;
     text-align: center;
-    width: 1000px;
-    margin: 30px auto;
-    // span {
-    //   min-width: 95px;
-    //   margin: 0 10px;
-    //   text-align: center;
-    //   font-size: 20px;
-    //   display: inline-block;
-    //   color: #b8b8b8;
-    //   cursor: pointer;
-    //   line-height: 60px;
-    // }
-    .spanC {
-      background-color: rgb(33, 207, 187);
-      border: 1px solid rgb(33, 207, 187);
-      color: white;
-      opacity: 1;
-    }
-    .spanB {
-      display: inline-block;
-      width: 130px;
-      height: 40px;
+    span {
+      min-width: 95px;
+      margin: 0 10px;
       text-align: center;
-      font-size: 12px;
-      line-height: 40px;
-      border: 1px solid #bfbfbf;
-      border-radius: 20px;
+      font-size: 20px;
+      display: inline-block;
+      color: #b8b8b8;
       cursor: pointer;
-      margin: 0 13px;
+      line-height: 60px;
+    }
+    .spanC {
+      color: #409eff !important;
+      font-weight: bold;
     }
   }
   .sectionBox {
     position: relative;
-
     .sectionA {
       width: 1099px;
-      margin: 50px auto;
+      margin: 0 auto;
       overflow-x: hidden;
-      .findTit {
-        overflow: hidden;
-        padding-bottom: 25px;
-      }
-      .imgLf {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        background: #fecc05;
-        border-radius: 90px;
-        color: #fff;
-        float: left;
-        em {
-          font-size: 36px;
-          display: block;
-          padding: 5px 0 2px 0;
-        }
-        i {
-          font-size: 12px;
-          display: block;
-        }
-      }
-      .find p {
-        color: #1a323e;
-        font-size: 12px;
-        line-height: 24px;
-      }
-      .titRig h2 {
-        font-size: 24px;
-        color: #1a323e;
-        padding-top: 8px;
-      }
     }
     .prev {
       display: block;
@@ -390,6 +322,10 @@ export default {
     width: 353px;
     float: left;
     transition: all 2s;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-10px);
+    }
   }
   .marginLeft {
     margin-left: 20px;
@@ -427,7 +363,7 @@ export default {
 
     right: 0;
     left: 0;
-    bottom: 30px;
+    bottom: 80px;
     text-align: center;
     a {
       display: block;
